@@ -1,31 +1,24 @@
 global main
-extern puts
+;extern puts
 
-section	.data
-
-msg	db	'testingmore',0
-n1	dw	'2'
-
-msg2	db	'sum:',0xa, 0xd
-
-segment .bss
-
-   num1 resb 2 
-   num2 resb 2 
-   res resb 1   
-
-section	.text
+section .data
+msg	db	"message"
+val	equ	"1"
+section .text
 
 main:
-	mov	eax,num1
-	;add	eax,num1
-	mov	ecx,msg2
+	mov	ecx,msg
+	mov	edx,1
 	call	puts
-	mov	ecx,eax
-	call 	puts
-	ret
+	ret	
+puts:
+	mov	ebx,1
+	mov	eax,4
+	int	0x21
+	mov	eax,1
+	int	0x21
 
 sum:
-	mov	al,2
-	mov	bl,2
-	add	al,bl
+	n1	equ	1
+	mov	eax,n1
+	ret	
