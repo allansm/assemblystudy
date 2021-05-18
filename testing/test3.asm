@@ -7,8 +7,8 @@ val	equ	"1"
 section .text
 
 main:
-	mov	ecx,msg
-	mov	edx,1
+	mov	rcx,msg
+	mov	rsp,1
 	call	puts
 	ret	
 puts:
